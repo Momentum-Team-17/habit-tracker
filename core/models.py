@@ -1,6 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from datetime import date
 
 
 class User(AbstractUser):
     pass
+
+
+class Habit(models.Model):
+    name = models.CharField(max_length=200)
+    goal = models.IntegerField()
+
+
+class Record(models.Model):
+    date = models.DateField(default=date.today)
+    goal_number = models.IntegerField()
