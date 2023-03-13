@@ -20,3 +20,6 @@ class Record(models.Model):
     goal_number = models.IntegerField()
     habit = models.ForeignKey(
         to="Habit", on_delete=models.CASCADE, blank=True, null=True)
+
+    class Meta:
+        unique_together = ['date', 'habit']
