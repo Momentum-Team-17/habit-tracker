@@ -11,7 +11,12 @@ class Habit(models.Model):
     name = models.CharField(max_length=200)
     goal = models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
 
 class Record(models.Model):
     date = models.DateField(default=date.today)
     goal_number = models.IntegerField()
+    habit = models.ForeignKey(
+        to="Habit", on_delete=models.CASCADE, blank=True, null=True)
