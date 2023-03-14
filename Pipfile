@@ -7,6 +7,8 @@ name = "pypi"
 django = "*"
 django-registration-redux = "*"
 psycopg2-binary = "*"
+django-environ = "*"
+django-extensions = "*"
 
 [dev-packages]
 
