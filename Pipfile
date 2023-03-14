@@ -9,6 +9,7 @@ django-registration-redux = "*"
 psycopg2-binary = "*"
 django-environ = "*"
 django-extensions = "*"
+whitenoise = "*"
 
 [dev-packages]
 
