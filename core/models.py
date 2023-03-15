@@ -17,7 +17,7 @@ class Habit(models.Model):
 
 class Record(models.Model):
     date = models.DateField(default=date.today)
-    goal_number = models.IntegerField()
+    number_completed = models.IntegerField()
     habit = models.ForeignKey(
         to="Habit", on_delete=models.CASCADE, blank=True, null=True)
 
