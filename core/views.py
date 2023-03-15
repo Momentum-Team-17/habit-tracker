@@ -27,16 +27,16 @@ def view_habit_details(request, pk):
 
 
 def add_record(request, habit_pk):
+    habit = get_object_or_404(Habit, pk=habit_pk)
     if request.method == 'POST':
         record_form = RecordForm(request.POST)
-        habit = get_object_or_404(Habit, pk=habit_pk)
         if record_form.is_valid():
             new_record = record_form.save(commit=False)
             new_record.habit = habit
             new_record.save()
             return redirect('home')
     form = RecordForm()
-    return render(request, 'core/add_record.html', {'form': form})
+    return render(request, 'core/add_record.html', {'form': form, 'habit': habit})
 
 
 def edit_habit():
