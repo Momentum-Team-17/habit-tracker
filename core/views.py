@@ -27,6 +27,16 @@ def view_habit_details(request, pk):
     return render(request, 'core/habit_details.html', {'habit_details': habit_details})
 
 
+def add_record(request):
+    if request.method == 'POST':
+        new_record = RecordForm(request.POST)
+        if new_record.is_valid():
+            new_record.save()
+            return redirect('home')
+    form = RecordForm()
+    return render(request, 'core/add_record.html', {'form': form})
+
+
 def edit_habit():
     pass
 

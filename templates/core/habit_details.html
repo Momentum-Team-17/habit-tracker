@@ -19,12 +19,11 @@
             <td>Number Completed</td>
         </tr>
         <tr>
-            <td>
-                Goal Reached?
-            </td>
+            <td>Goal Reached?</td>
         </tr>
     </table>
-<footer>
-    <button><a href="{% url 'home' %}">Home</a></button>
-</footer>
+    <footer>
+        <button><a href="{% url 'add_record' %}">Add New Record</a></button>
+        <button><a href="{% url 'home' %}">Home</a></button>
+    </footer>
 {% endblock %}
