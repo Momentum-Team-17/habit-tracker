@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Habit Details{% endblock %}
+{% block content %}
+    <h1>Habit Details</h1>
+    <h3>{{ habit_details.name }}</h3>
+    <h3>Goal: {{ habit_details.goal }}</h3>
+
+<footer>
+    <button><a href="{% url 'home' %}">Home</a></button>
+</footer>
+{% endblock %}

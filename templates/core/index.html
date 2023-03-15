@@ -4,7 +4,7 @@
 <h2>Habits:</h2>
         <ul>
         {% for thing in habits %}
-       <li>{{ thing }}</li>
+       <li><a href="{% url 'habit_details' thing.pk %}">{{ thing }}</a></li>
         {% endfor %}
         </ul>
 {% endblock %}

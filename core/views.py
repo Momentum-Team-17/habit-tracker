@@ -22,6 +22,11 @@ def add_habit(request):
     return render(request, 'core/add_habit.html', {'form': form})
 
 
+def view_habit_details(request, pk):
+    habit_details = get_object_or_404(Habit, pk=pk)
+    return render(request, 'core/habit_details.html', {'habit_details': habit_details})
+
+
 def edit_habit():
     pass
 
