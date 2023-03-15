@@ -4,7 +4,26 @@
     <h1>Habit Details</h1>
     <h3>{{ habit_details.name }}</h3>
     <h3>Goal: {{ habit_details.goal }}</h3>
-
+    <table>
+        <tr>
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+        <tr>
+            <td>Number Completed</td>
+        </tr>
+        <tr>
+            <td>
+                Goal Reached?
+            </td>
+        </tr>
+    </table>
 <footer>
     <button><a href="{% url 'home' %}">Home</a></button>
 </footer>
