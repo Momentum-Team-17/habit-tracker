@@ -22,15 +22,17 @@ def add_habit(request):
 
 
 def view_habit_details(request, pk):
-    records = Record.objects.all()
-    habit_details = get_object_or_404(Habit, pk=pk)
-    return render(request, 'core/habit_details.html', {'habit_details': habit_details, 'records': records})
+    habit = get_object_or_404(Habit, pk=pk)
+    return render(request, 'core/habit_details.html', {'habit': habit})
 
 
-def add_record(request):
+def add_record(request, habit_pk):
     if request.method == 'POST':
-        new_record = RecordForm(request.POST)
-        if new_record.is_valid():
+        record_form = RecordForm(request.POST)
+        habit = get_object_or_404(Habit, pk=habit_pk)
+        if record_form.is_valid():
+            new_record = record_form.save(commit=False)
+            new_record.habit = habit
             new_record.save()
             return redirect('home')
     form = RecordForm()

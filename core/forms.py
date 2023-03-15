@@ -13,4 +13,4 @@ class RecordForm(forms.ModelForm):
 
     class Meta:
         model = Record
-        fields = ('date', 'number_completed', 'habit')
+        fields = ('date', 'number_completed')
