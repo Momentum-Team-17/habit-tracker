@@ -2,26 +2,30 @@
 {% block title %}Habit Details{% endblock %}
 {% block content %}
     <h1>Habit Details</h1>
-    <h3>{{ habit_details.name }}</h3>
-    <h3>Goal: {{ habit_details.goal }}</h3>
+    <h3>{{ habit }}</h3>
+    <h3>Goal: {{ habit.goal }}</h3>
     <table>
         <tr>
             <th>Date</th>
-        {% for thing in records %}
-            <th>{{ thing.date }}</th>
+        {% for record in habit.records.all %}
+            <th>{{ record.date }}</th>
         {% endfor %}
         </tr>
         <tr>
             <th>Number Completed</th>
-            {% for thing in records %}
-                <td>{{ thing.number_completed }}</td>
+            {% for record in habit.records.all %}
+                <td>{{ record.number_completed }}</td>
             {% endfor %}
         </tr>
         <tr>
             <th>Goal Completed?</th>
-            {% for thing in records %}
-            if 
-                <td>{{ thing.number_completed }}</td>
+            {% for record in habit.records.all %}
+                {% if record.number_completed >= record.habit.goal %}
+                    <td>yes</td>
+                {% else %}
+                    <td>no</td>
+                {% endif %}
+                {% comment %} <td>{{ thing.number_completed }}</td> {% endcomment %}
             {% endfor %}
         </tr>
         {% comment %} <tr>
@@ -42,7 +46,7 @@
         </tr> {% endcomment %}
     </table>
     <footer>
-        <button><a href="{% url 'add_record' %}">Add New Record</a></button>
+        <button><a href="{% url 'add_record' habit.pk %}">Add New Record</a></button>
         <button><a href="{% url 'home' %}">Home</a></button>
     </footer>
 {% endblock %}
