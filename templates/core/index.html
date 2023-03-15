@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Habits:</h2>
+        <ul>
+        {% for thing in habits %}
+       <li>{{ thing }}</li>
+        {% endfor %}
+        </ul>
+{% endblock %}

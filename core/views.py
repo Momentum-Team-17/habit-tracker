@@ -4,8 +4,12 @@ from .forms import HabitForm, RecordForm
 
 
 # view details, add records for the habit, list all records for the habit
-def view_habit_details():
-    pass
+def view_habits(request):
+    habits = Habit.objects.all()
+    # record = Record.objects.all()
+    for thing in habits:
+        print(habits)
+    return render(request, 'core/index.html', {'habits': habits})
 
 
 def add_habit(request):
