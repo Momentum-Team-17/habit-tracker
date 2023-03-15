@@ -6,6 +6,25 @@
     <h3>Goal: {{ habit_details.goal }}</h3>
     <table>
         <tr>
+            <th>Date</th>
+        {% for thing in records %}
+            <th>{{ thing.date }}</th>
+        {% endfor %}
+        </tr>
+        <tr>
+            <th>Number Completed</th>
+            {% for thing in records %}
+                <td>{{ thing.number_completed }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Goal Completed?</th>
+            {% for thing in records %}
+            if 
+                <td>{{ thing.number_completed }}</td>
+            {% endfor %}
+        </tr>
+        {% comment %} <tr>
             <th></th>
             <th>Monday</th>
             <th>Tuesday</th>
@@ -16,11 +35,11 @@
             <th>Sunday</th>
         </tr>
         <tr>
-            <td>Number Completed</td>
+            <td>{{ habit_details.name }}</td>
         </tr>
         <tr>
             <td>Goal Reached?</td>
-        </tr>
+        </tr> {% endcomment %}
     </table>
     <footer>
         <button><a href="{% url 'add_record' %}">Add New Record</a></button>
