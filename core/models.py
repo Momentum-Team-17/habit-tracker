@@ -10,6 +10,8 @@ class User(AbstractUser):
 class Habit(models.Model):
     name = models.CharField(max_length=200)
     goal = models.IntegerField()
+    observers = models.ManyToManyField(
+        User, blank=True, null=True, related_name='habits_i_am_observing')
 
     def __str__(self):
         return self.name
