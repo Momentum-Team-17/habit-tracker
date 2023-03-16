@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Habit, Record
-from .forms import HabitForm, RecordForm
+from .forms import HabitForm, RecordForm, ObserverForm
 
 
 # view details, add records for the habit, list all records for the habit
