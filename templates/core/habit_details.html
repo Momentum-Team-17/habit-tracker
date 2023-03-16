@@ -4,30 +4,6 @@
     <h1>Habit Details</h1>
     <h3>{{ habit }}</h3>
     <h3>Goal: {{ habit.goal }}</h3>
-    {% comment %} <table>
-        <tr>
-            <th>Date</th>
-        {% for record in habit.records.all %}
-            <th>{{ record.date }}</th>
-        {% endfor %}
-        </tr>
-        <tr>
-            <th>Number Completed</th>
-            {% for record in habit.records.all %}
-                <td>{{ record.number_completed }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <th>Goal Completed?</th>
-            {% for record in habit.records.all %}
-                {% if record.number_completed >= record.habit.goal %}
-                    <td>yes</td>
-                {% else %}
-                    <td>no</td>
-                {% endif %}
-        </tr>
-    </table> {% endcomment %}
-
     <table>
         <tr>
             <th>Date</th>
