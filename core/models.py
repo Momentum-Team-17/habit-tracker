@@ -23,3 +23,4 @@ class Record(models.Model):
 
     class Meta:
         unique_together = ['date', 'habit']
+        ordering = ['-date']
