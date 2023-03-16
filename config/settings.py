@@ -43,6 +43,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'registration',
+    'debug_toolbar',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -166,3 +168,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "core.User"
 
 # LOGIN_REDIRECT_URL = '/'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
