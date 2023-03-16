@@ -12,6 +12,8 @@ class Habit(models.Model):
     goal = models.IntegerField()
     observers = models.ManyToManyField(
         User, blank=True, null=True, related_name='habits_i_am_observing')
+    creator = models.ForeignKey(
+        to=User, on_delete=models.CASCADE, related_name='habits_i_created')
 
     def __str__(self):
         return self.name
